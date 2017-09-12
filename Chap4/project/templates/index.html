@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>Weather Info.</title>
+    <style type="text/css">
+        #div
+        {
+        margin: 0 auto; /* 外边框 */
+        text-align:center;
+        border:1px solid #a1a1a1;
+        padding:10px 5px;
+        width:450px; /* 内边框 */
+        border-radius:25px;
+        -moz-border-radius:25px; /* 老的 Firefox */
+        }
+        body
+        {
+            text-align: center;
+        }
+    </style>
+</head>
+<body background="{{ url_for('static',filename='bg.jpg') }}">
+    <form action="/" method="post">
+        <H1 align="center">天气查询系统</H1>
+            <p>
+                城市：<input name="cityname" value="{{ cityname }}">
+                <button type="submit" name="order" value="search">查询</button>
+                <button type="submit" name="order" value="history">历史</button>
+                <button type="submit" name="order" value="help">帮助</button>
+                <button type="submit" name="order" value="quit">退出</button>
+                <input type="button" class="a c" onclick="submitForm(this.value)" value="上传" />
+            </p>
+    </form>
+    {% if message %}
+    <p style="color:red" align="center">{{ message }}</p>
+    {% endif %}
+
+    {% if result %}
+    <p style="color:blue" align="center">{{ location }}的天气：</p>
+        {% for k,v in result.items() %}
+        <div id="div" align="center">
+          <p>{{ v }}</p>
+        </div>
+        {% endfor %}
+    {% endif %}
+
+    {% if help %}
+    <p style="color:blue" align="center">输入城市名，返回该城市的天气数据；<br>
+    输入指令，打印帮助文档（一般使用 h 或 help）；<br>
+    输入指令，退出程序的交互（一般使用 quit 或 exit）；<br>
+    在退出程序之前，打印查询过的所有城市。<br></p>
+    {% endif %}
+
+    {% if his %}
+    <div align="center">
+    <div id="div">
+    <p style="color:blue" align='center'>查询历史记录如下：</p>
+    {% for i in his %}
+      <p>{{ i }}</a>
+    {% endfor %}
+    </div>
+</div>
+    {% endif %}
+</body>
+</html>

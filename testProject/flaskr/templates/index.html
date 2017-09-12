@@ -1,0 +1,16 @@
+<html>
+<head>
+    <title>Weather Info.</title>
+</head>
+<body>
+    {% if message %}
+    <p style="color:red">{{ message }}</p>
+    {% endif %}
+    <form action="/" method="post">
+        <legend>请输入您要查找的城市：....</legend>
+        <p><input name='cityname' placeholder="Cityname" value="{{ cityname }}"></p>
+        <p><button type="submit" name="search" value="search">Search now</button></p>
+        <p><button type="submit" name="help" value="help">help</button></p>
+</form>
+</body>
+</html>

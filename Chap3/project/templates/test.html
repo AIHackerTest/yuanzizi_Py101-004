@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="{{  url_for('static',filename='bootstrap-3.3.7-dist/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <h1>你好，世界！</h1>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <h2>创建模态框（Modal）</h2>
+    <!-- 按钮触发模态框 -->
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    	开始演示模态框
+    </button>
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    	<div class="modal-dialog">
+    		<div class="modal-content">
+    			<div class="modal-header">
+    				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+    					&times;
+    				</button>
+    				<h4 class="modal-title" id="myModalLabel">
+    					模态框（Modal）标题
+    				</h4>
+    			</div>
+    			<div class="modal-body">
+    				在这里添加一些文本
+    			</div>
+    			<div class="modal-footer">
+    				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+    				</button>
+    				<button type="button" class="btn btn-primary">
+    					提交更改
+    				</button>
+    			</div>
+    		</div><!-- /.modal-content -->
+    	</div><!-- /.modal -->
+    </div>
+
+  </body>
+</html>
